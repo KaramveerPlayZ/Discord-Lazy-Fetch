@@ -19,7 +19,7 @@ from . import utils
 from . import models
 
 # Third party libraries
-from .third_party.user_agents import parse
+from .useragents import parse
 
 # Global variables
 _GATEWAY = "wss://gateway.discord.gg/?v=8&encoding=json"
