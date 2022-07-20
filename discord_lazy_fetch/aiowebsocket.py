@@ -19,7 +19,7 @@ from . import utils
 from . import models
 
 # Third party libraries
-from .useragents import parse
+#from .useragents import parse
 
 # Global variables
 _GATEWAY = "wss://gateway.discord.gg/?v=8&encoding=json"
@@ -169,11 +169,11 @@ class IDiscordWS(object):
         kwargs = {}
 
         if self.user_agent:
-            user_agent_parser = parse(self.user_agent)
+            user_agent_parser = (self.user_agent)
 
-            kwargs["os"] = user_agent_parser.os.family
-            kwargs["browser"] = user_agent_parser.browser.family
-            kwargs["device"] = user_agent_parser.device.family
+            kwargs["os"] = "Windows 95"
+            kwargs["browser"] = "Chrome"
+            kwargs["device"] = "pc"
 
         payload = opcodes.get_identify(self.token, **kwargs)
         await self.send(payload)
